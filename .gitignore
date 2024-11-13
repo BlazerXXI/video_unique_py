@@ -1,0 +1,6 @@
+/build
+/dist
+/ffmpeg
+/input_videos
+/output_videos
+VideoUniquizer.spec
