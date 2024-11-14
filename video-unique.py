@@ -60,13 +60,13 @@ def unique_videos(input_file, output_folder):
     process_command(input_file, f"{output_folder}/unique_1.mp4", f"-vf \"hflip\" -t {duration - 2}")
 
     # 2. Grounding with the animation of the appearance
-    process_command(input_file, f"{output_folder}/unique_2.mp4", "-vf \"boxblur=10:enable='between(t,0,2)\"")
+    process_command(input_file, f"{output_folder}/unique_2.mp4", "-vf \"fade=in:0:50\"")
 
     # 3. Visual noise and mirroring
     process_command(input_file, f"{output_folder}/unique_3.mp4", "-vf \"hflip, noise=alls=20\"")
 
     # 4. Template + mirroring + animation
-    process_command(input_file, f"{output_folder}/unique_4.mp4", "-vf \"hflip, boxblur=10:enable='between(t,0,2)\"")
+    process_command(input_file, f"{output_folder}/unique_4.mp4", "-vf \"hflip, fade=in:0:50\"")
 
     # 5. Darming along the edges, pruning and mirroring
     process_command(input_file, f"{output_folder}/unique_5.mp4", f"-vf \"vignette=PI/4, hflip\" -t {duration - 2}")
